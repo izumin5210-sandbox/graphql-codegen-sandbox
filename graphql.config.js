@@ -25,6 +25,7 @@ module.exports = {
           presetConfig: {
             baseTypesPath: "../graphqlTypes",
             folder: "__generated__/000-basic/",
+            extension: ".ts",
           },
           plugins: [addHeader, "typescript-operations"],
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
@@ -36,6 +37,7 @@ module.exports = {
           presetConfig: {
             baseTypesPath: "../graphqlTypes",
             folder: "__generated__/001-inlineFragmentTypes-combine/",
+            extension: ".ts",
           },
           plugins: [addHeader, "typescript-operations"],
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
@@ -49,6 +51,7 @@ module.exports = {
           presetConfig: {
             baseTypesPath: "../graphqlTypes",
             folder: "__generated__/002-inlineFragmentTypes-mask/",
+            extension: ".ts",
           },
           plugins: [addHeader, "typescript-operations"],
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
