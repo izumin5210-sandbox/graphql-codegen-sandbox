@@ -101,6 +101,19 @@ module.exports = {
           // plugins: [addHeader, "typescript-operations", "typed-document-node"],
           plugins: [addHeader],
         },
+        "src/__generated__/006-gql-tag-operations-preset-fragment-masking-argumented-module/":
+          {
+            preset: "gql-tag-operations-preset",
+            /** @type {import("@graphql-codegen/gql-tag-operations-preset").GqlTagConfig} */
+            presetConfig: {
+              augmentedModuleName: "@urql/core",
+              fragmentMasking: {
+                augmentedModuleName: "@urql/fragment",
+              },
+            },
+            // plugins: [addHeader, "typescript-operations", "typed-document-node"],
+            plugins: [addHeader],
+          },
       },
       hooks: {
         afterAllFileWrite: ["yarn prettier --write"],
