@@ -48,7 +48,7 @@ module.exports = {
           /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
           presetConfig: {
             baseTypesPath: "../graphqlTypes",
-            folder: "__generated__/002-inline-FragmentTypes-mask/",
+            folder: "__generated__/002-inlineFragmentTypes-mask/",
           },
           plugins: [addHeader, "typescript-operations"],
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
