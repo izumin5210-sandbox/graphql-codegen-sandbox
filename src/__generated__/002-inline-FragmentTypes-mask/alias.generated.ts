@@ -7,7 +7,7 @@ export type PostSummaryFragment = {
   title: string;
   body: string;
   user: { __typename?: "User"; username: string; thumbnailUrl?: string | null };
-};
+} & { " $fragmentName": "PostSummaryFragment" };
 
 export type GetPostSummaryQueryVariables = Types.Exact<{
   postId: Types.Scalars["String"];
@@ -15,15 +15,7 @@ export type GetPostSummaryQueryVariables = Types.Exact<{
 
 export type GetPostSummaryQuery = {
   __typename?: "Query";
-  postById: {
-    __typename?: "Post";
-    id: string;
-    title: string;
-    body: string;
-    user: {
-      __typename?: "User";
-      username: string;
-      thumbnailUrl?: string | null;
-    };
+  postById: { __typename?: "Post"; id: string } & {
+    " $fragmentRefs": { PostSummaryFragment: PostSummaryFragment };
   };
 };

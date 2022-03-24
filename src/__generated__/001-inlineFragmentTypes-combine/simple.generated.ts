@@ -14,10 +14,5 @@ export type GetUserHeaderQueryVariables = Types.Exact<{
 
 export type GetUserHeaderQuery = {
   __typename?: "Query";
-  userById: {
-    __typename?: "User";
-    id: string;
-    username: string;
-    avatarUrl?: string | null;
-  };
+  userById: { __typename?: "User"; id: string } & UserHeaderFragment;
 };

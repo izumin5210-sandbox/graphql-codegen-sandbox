@@ -10,15 +10,14 @@ export type PostUserAvatarFragment = {
 export type PostDetailHeaderFragment = {
   __typename?: "Post";
   title: string;
-  author: { __typename?: "User"; avatarUrl?: string | null };
-};
+} & PostUserAvatarFragment;
 
 export type PostDetailFragment = {
   __typename?: "Post";
   title: string;
   body: string;
-  author: { __typename?: "User"; username: string; avatarUrl?: string | null };
-};
+  author: { __typename?: "User"; username: string };
+} & PostUserAvatarFragment;
 
 export type GetPostDetailQueryVariables = Types.Exact<{
   postId: Types.Scalars["String"];
@@ -26,15 +25,6 @@ export type GetPostDetailQueryVariables = Types.Exact<{
 
 export type GetPostDetailQuery = {
   __typename?: "Query";
-  postById: {
-    __typename?: "Post";
-    id: string;
-    title: string;
-    body: string;
-    author: {
-      __typename?: "User";
-      username: string;
-      avatarUrl?: string | null;
-    };
-  };
+  postById: { __typename?: "Post"; id: string } & PostDetailFragment &
+    PostDetailHeaderFragment;
 };

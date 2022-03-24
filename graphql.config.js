@@ -26,9 +26,35 @@ module.exports = {
             baseTypesPath: "../graphqlTypes",
             folder: "__generated__/000-basic/",
           },
-          plugins: [addHeader, "typescript-operations", "typed-document-node"],
-          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig & import("@graphql-codegen/typed-document-node").TypeScriptTypedDocumentNodesConfig} */
+          plugins: [addHeader, "typescript-operations"],
+          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
           config: {},
+        },
+        "src/__generated__/001-inlineFragmentTypes-combine": {
+          preset: "near-operation-file",
+          /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
+          presetConfig: {
+            baseTypesPath: "../graphqlTypes",
+            folder: "__generated__/001-inlineFragmentTypes-combine/",
+          },
+          plugins: [addHeader, "typescript-operations"],
+          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
+          config: {
+            inlineFragmentTypes: "combine",
+          },
+        },
+        "src/__generated__/002-inlineFragmentTypes-mask": {
+          preset: "near-operation-file",
+          /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
+          presetConfig: {
+            baseTypesPath: "../graphqlTypes",
+            folder: "__generated__/002-inline-FragmentTypes-mask/",
+          },
+          plugins: [addHeader, "typescript-operations"],
+          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
+          config: {
+            inlineFragmentTypes: "mask",
+          },
         },
       },
       hooks: {

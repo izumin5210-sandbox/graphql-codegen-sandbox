@@ -18,8 +18,6 @@ export type GetPostWithCommentsQuery = {
   postById: {
     __typename?: "Post";
     id: string;
-    title: string;
-    body: string;
-    comments: Array<{ __typename?: "Comment"; id: string; body: string }>;
-  };
+    comments: Array<{ __typename?: "Comment"; id: string }>;
+  } & PostWithCommentsFragment;
 };

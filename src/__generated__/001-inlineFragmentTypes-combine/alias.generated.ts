@@ -15,15 +15,5 @@ export type GetPostSummaryQueryVariables = Types.Exact<{
 
 export type GetPostSummaryQuery = {
   __typename?: "Query";
-  postById: {
-    __typename?: "Post";
-    id: string;
-    title: string;
-    body: string;
-    user: {
-      __typename?: "User";
-      username: string;
-      thumbnailUrl?: string | null;
-    };
-  };
+  postById: { __typename?: "Post"; id: string } & PostSummaryFragment;
 };

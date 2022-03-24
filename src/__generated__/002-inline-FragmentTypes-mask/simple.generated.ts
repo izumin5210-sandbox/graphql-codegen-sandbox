@@ -6,7 +6,7 @@ export type UserHeaderFragment = {
   __typename?: "User";
   username: string;
   avatarUrl?: string | null;
-};
+} & { " $fragmentName": "UserHeaderFragment" };
 
 export type GetUserHeaderQueryVariables = Types.Exact<{
   userId: Types.Scalars["String"];
@@ -14,10 +14,7 @@ export type GetUserHeaderQueryVariables = Types.Exact<{
 
 export type GetUserHeaderQuery = {
   __typename?: "Query";
-  userById: {
-    __typename?: "User";
-    id: string;
-    username: string;
-    avatarUrl?: string | null;
+  userById: { __typename?: "User"; id: string } & {
+    " $fragmentRefs": { UserHeaderFragment: UserHeaderFragment };
   };
 };

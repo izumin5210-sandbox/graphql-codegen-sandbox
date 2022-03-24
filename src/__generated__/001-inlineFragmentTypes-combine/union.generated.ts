@@ -10,8 +10,8 @@ export type PostWithAttachmentsFragment = {
   __typename?: "Post";
   title: string;
   attachmentFiles: Array<
-    | { __typename?: "Image"; imageUrl: string }
-    | { __typename?: "Video"; videoUrl: string }
+    | ({ __typename?: "Image" } & PostImageFragment)
+    | ({ __typename?: "Video" } & PostVideoFragment)
   >;
 };
 
@@ -21,12 +21,5 @@ export type GetPostWithAttachmentsQueryVariables = Types.Exact<{
 
 export type GetPostWithAttachmentsQuery = {
   __typename?: "Query";
-  postById: {
-    __typename?: "Post";
-    title: string;
-    attachmentFiles: Array<
-      | { __typename?: "Image"; imageUrl: string }
-      | { __typename?: "Video"; videoUrl: string }
-    >;
-  };
+  postById: { __typename?: "Post" } & PostWithAttachmentsFragment;
 };

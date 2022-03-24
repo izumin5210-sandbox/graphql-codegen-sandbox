@@ -7,7 +7,7 @@ export type PostWithCommentsFragment = {
   title: string;
   body: string;
   comments: Array<{ __typename?: "Comment"; body: string }>;
-};
+} & { " $fragmentName": "PostWithCommentsFragment" };
 
 export type GetPostWithCommentsQueryVariables = Types.Exact<{
   postId: Types.Scalars["String"];
@@ -18,8 +18,8 @@ export type GetPostWithCommentsQuery = {
   postById: {
     __typename?: "Post";
     id: string;
-    title: string;
-    body: string;
-    comments: Array<{ __typename?: "Comment"; id: string; body: string }>;
+    comments: Array<{ __typename?: "Comment"; id: string }>;
+  } & {
+    " $fragmentRefs": { PostWithCommentsFragment: PostWithCommentsFragment };
   };
 };

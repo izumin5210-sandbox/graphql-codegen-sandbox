@@ -6,7 +6,7 @@ export type PostWithAuthorFragment = {
   __typename?: "Post";
   title: string;
   author: { __typename?: "User"; username: string };
-};
+} & { " $fragmentName": "PostWithAuthorFragment" };
 
 export type GetPostWithAuthorQueryVariables = Types.Exact<{
   postId: Types.Scalars["String"];
@@ -14,10 +14,7 @@ export type GetPostWithAuthorQueryVariables = Types.Exact<{
 
 export type GetPostWithAuthorQuery = {
   __typename?: "Query";
-  postById: {
-    __typename?: "Post";
-    id: string;
-    title: string;
-    author: { __typename?: "User"; username: string };
+  postById: { __typename?: "Post"; id: string } & {
+    " $fragmentRefs": { PostWithAuthorFragment: PostWithAuthorFragment };
   };
 };

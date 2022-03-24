@@ -11,7 +11,7 @@ export type PostListItemFragment = {
     avatarUrl?: string | null;
     username: string;
   };
-};
+} & { " $fragmentName": "PostListItemFragment" };
 
 export type ListPostsQueryVariables = Types.Exact<{
   userId: Types.Scalars["String"];
@@ -19,15 +19,9 @@ export type ListPostsQueryVariables = Types.Exact<{
 
 export type ListPostsQuery = {
   __typename?: "Query";
-  postsByUserId: Array<{
-    __typename?: "Post";
-    id: string;
-    title: string;
-    author: {
-      __typename?: "User";
-      id: string;
-      avatarUrl?: string | null;
-      username: string;
-    };
-  }>;
+  postsByUserId: Array<
+    { __typename?: "Post"; id: string } & {
+      " $fragmentRefs": { PostListItemFragment: PostListItemFragment };
+    }
+  >;
 };

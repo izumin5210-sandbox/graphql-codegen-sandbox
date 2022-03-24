@@ -11,7 +11,7 @@ export type PostHeaderUserFragment = {
 export type PostHeaderFragment = {
   __typename?: "Post";
   title: string;
-  author: { __typename?: "User"; username: string; avatarUrl?: string | null };
+  author: { __typename?: "User" } & PostHeaderUserFragment;
 };
 
 export type GetPostHeaderQueryVariables = Types.Exact<{
@@ -23,12 +23,6 @@ export type GetPostHeaderQuery = {
   postById: {
     __typename?: "Post";
     id: string;
-    title: string;
-    author: {
-      __typename?: "User";
-      id: string;
-      username: string;
-      avatarUrl?: string | null;
-    };
-  };
+    author: { __typename?: "User"; id: string };
+  } & PostHeaderFragment;
 };
