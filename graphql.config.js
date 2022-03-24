@@ -31,6 +31,18 @@ module.exports = {
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
           config: {},
         },
+        "src/__generated__/000-basic-with-typed-document-node/": {
+          preset: "near-operation-file",
+          /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
+          presetConfig: {
+            baseTypesPath: "../graphqlTypes",
+            folder: "__generated__/000-basic-with-typed-document-node/",
+            extension: ".ts",
+          },
+          plugins: [addHeader, "typescript-operations", "typed-document-node"],
+          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig & import("@graphql-codegen/typed-document-node").TypeScriptTypedDocumentNodesConfig} */
+          config: {},
+        },
         "src/__generated__/001-inlineFragmentTypes-combine": {
           preset: "near-operation-file",
           /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
@@ -57,6 +69,20 @@ module.exports = {
           /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig} */
           config: {
             inlineFragmentTypes: "mask",
+          },
+        },
+        "src/__generated__/003-typed-document-node-dedupe/": {
+          preset: "near-operation-file",
+          /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
+          presetConfig: {
+            baseTypesPath: "../graphqlTypes",
+            folder: "__generated__/003-typed-document-node-dedupe/",
+            extension: ".ts",
+          },
+          plugins: [addHeader, "typescript-operations", "typed-document-node"],
+          /** @type {import("@graphql-codegen/typescript-operations").TypeScriptDocumentsPluginConfig & import("@graphql-codegen/typed-document-node").TypeScriptTypedDocumentNodesConfig} */
+          config: {
+            dedupeFragments: true,
           },
         },
       },
