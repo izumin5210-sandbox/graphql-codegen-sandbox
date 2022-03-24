@@ -7,7 +7,7 @@ module.exports = {
     /** @type {import("@graphql-codegen/plugin-helpers").Types.Config} */
     codegen: {
       generates: {
-        "src/__generated__/a/graphqlTypes.ts": {
+        "src/__generated__/graphqlTypes.ts": {
           plugins: [
             {
               add: {
@@ -20,12 +20,12 @@ module.exports = {
           /** @type {import("@graphql-codegen/typescript").TypeScriptPluginConfig} */
           config: {},
         },
-        "src/": {
+        "src/__generated__/000-basic/": {
           preset: "near-operation-file",
           /** @type {import("@graphql-codegen/near-operation-file-preset").NearOperationFileConfig} */
           presetConfig: {
-            baseTypesPath: "__generated__/a/graphqlTypes",
-            folder: "__generated__/a/",
+            baseTypesPath: "../graphqlTypes",
+            folder: "__generated__/000-basic/",
           },
           plugins: [
             {
