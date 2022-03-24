@@ -85,6 +85,22 @@ module.exports = {
             dedupeFragments: true,
           },
         },
+        "src/__generated__/004-gql-tag-operations-preset/": {
+          preset: "gql-tag-operations-preset",
+          /** @type {import("@graphql-codegen/gql-tag-operations-preset").GqlTagConfig} */
+          presetConfig: {},
+          // plugins: [addHeader, "typescript-operations", "typed-document-node"],
+          plugins: [addHeader],
+        },
+        "src/__generated__/005-gql-tag-operations-preset-fragment-masking/": {
+          preset: "gql-tag-operations-preset",
+          /** @type {import("@graphql-codegen/gql-tag-operations-preset").GqlTagConfig} */
+          presetConfig: {
+            fragmentMasking: true,
+          },
+          // plugins: [addHeader, "typescript-operations", "typed-document-node"],
+          plugins: [addHeader],
+        },
       },
       hooks: {
         afterAllFileWrite: ["yarn prettier --write"],
