@@ -3,13 +3,16 @@
   "packageManager": "yarn@3.2.0",
   "private": true,
   "devDependencies": {
+    "@graphql-codegen/add": "^3.1.1",
     "@graphql-codegen/cli": "^2.6.2",
     "@graphql-codegen/near-operation-file-preset": "^2.2.9",
     "@graphql-codegen/typed-document-node": "^2.2.8",
     "@graphql-codegen/typescript": "^2.4.8",
-    "@graphql-codegen/typescript-operations": "^2.3.5"
+    "@graphql-codegen/typescript-operations": "^2.3.5",
+    "prettier": "^2.6.0"
   },
   "dependencies": {
+    "@graphql-typed-document-node/core": "^3.1.1",
     "graphql": "^16.3.0"
   }
 }
