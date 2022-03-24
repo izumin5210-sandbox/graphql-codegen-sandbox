@@ -14,5 +14,9 @@
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.1.1",
     "graphql": "^16.3.0"
+  },
+  "scripts": {
+    "clean": "rm -rf src/__generated__",
+    "gen": "run graphql-codegen"
   }
 }
