@@ -1,0 +1,21 @@
+fragment PostHeaderUser on User {
+  username
+  avatarUrl
+}
+
+fragment PostHeader on Post {
+  title
+  author {
+    ...PostHeaderUser
+  }
+}
+
+query GetPostHeader($postId: String!) {
+  postById(postId: $postId) {
+    id
+    author {
+      id
+    }
+    ...PostHeader
+  }
+}

@@ -1,0 +1,39 @@
+type User {
+  id: String!
+  email: String!
+  username: String!
+  avatarUrl: String
+}
+
+type Post {
+  id: String!
+  title: String!
+  body: String!
+  author: User!
+  comments: [Comment!]!
+  attachmentFiles: [AttachmentFile!]!
+}
+
+type Comment {
+  id: String!
+  author: User!
+  body: String!
+}
+
+type Image {
+  id: String!
+  imageUrl: String!
+}
+
+type Video {
+  id: String!
+  videoUrl: String!
+}
+
+union AttachmentFile = Image | Video
+
+type Query {
+  userById(userId: String!): User!
+  postById(postId: String!): Post!
+  postsByUserId(userId: String!): [Post!]!
+}
